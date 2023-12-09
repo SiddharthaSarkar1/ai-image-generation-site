@@ -1,0 +1,1 @@
+# SidJourney an AI Image Generation Website using HTML, CSS and JavaScript

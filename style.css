@@ -40,6 +40,7 @@
 .image-generator h1 {
   font-size: 2.5rem;
   font-weight: 700;
+  text-shadow: #FC0 1px 0 10px;
 }
 
 .image-generator p {
@@ -110,23 +111,31 @@
   flex-wrap: wrap;
   padding: 0 15px;
   max-width: 1250px;
-  margin: 50px 0;
-  margin-left: 40px;
+  margin: 50px auto;
   justify-content: center;
 }
 
 .image-gallary .img-card {
   width: 285px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   aspect-ratio: 1 / 1;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
+  background: #f2f2f2;
 }
 
 .image-gallary .img-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.image-gallary .img-card.loading img {
+  width: 80px;
+  height: 80px;
 }
 
 .image-gallary .img-card .download-btn {
@@ -143,7 +152,7 @@
   transition: all 1s ease-out allow-discrete;
 }
 
-.image-gallary .img-card:hover .download-btn {
+.image-gallary .img-card:not(.loading):hover .download-btn {
   display: flex;
 }
 
@@ -154,4 +163,55 @@
 .image-gallary .img-card .download-btn img {
   width: 14px;
   height: 14px;
+}
+
+@media screen and (max-width: 760px) {
+
+  .image-generator h1 {
+    font-size: 1.8rem;
+  }
+
+  .image-generator p {
+    font-size: 1rem;
+  }
+
+  .image-generator .generate-form {
+    margin-top: 38px;
+    height: 52px;
+    display: block;
+  }
+
+  .generate-form .controls{
+    height: 40px;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: flex-end;  
+  }
+
+  .generate-form .image-quantity {
+    color: #fff;
+  } 
+
+  .generate-form .image-quantity option {
+    color: #000;
+  }
+
+  .generate-form .generate-button {
+    height: 100%;
+  }
+
+  .image-gallary {
+    margin-top: 20px;
+  }
+
+  .image-gallary .img-card:not(.loading) .download-btn {
+    display: flex;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  .image-gallary .img-card {
+    width: 100%;
+  }
 }
